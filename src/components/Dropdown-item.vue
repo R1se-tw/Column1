@@ -1,0 +1,31 @@
+<template>
+    <li class="dropdown-option"
+    :class="{'is-disabled': disabled}"
+    >
+      <slot></slot>
+    </li>
+</template>
+
+<script lang="ts">
+
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'dropdown-item',
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  }
+})
+
+</script>
+
+<style>
+.dropdown-option.is-disabled * {
+    color:bisque;
+    pointer-events: none;
+    background-color: transparent;
+}
+</style>
